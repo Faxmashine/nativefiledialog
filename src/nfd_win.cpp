@@ -425,7 +425,7 @@ NATIVE_FILE_DIALOG_MODULE_API nfdresult_t NFD_OpenDialog(
     }    
 
     // Show the dialog.
-    result = fileOpenDialog->Show(NULL);
+    result = fileOpenDialog->Show(::GetActiveWindow());
     if ( SUCCEEDED(result) )
     {
         // Get the file name
@@ -532,7 +532,7 @@ NATIVE_FILE_DIALOG_MODULE_API nfdresult_t NFD_OpenDialogMultiple(
     }
  
     // Show the dialog.
-    result = fileOpenDialog->Show(NULL);
+    result = fileOpenDialog->Show(::GetActiveWindow());
     if ( SUCCEEDED(result) )
     {
         IShellItemArray *shellItems;
@@ -611,7 +611,7 @@ NATIVE_FILE_DIALOG_MODULE_API nfdresult_t NFD_SaveDialog(
     }
 
     // Show the dialog.
-    result = fileSaveDialog->Show(NULL);
+    result = fileSaveDialog->Show(::GetActiveWindow());
     if ( SUCCEEDED(result) )
     {
         // Get the file name
@@ -712,7 +712,7 @@ NATIVE_FILE_DIALOG_MODULE_API nfdresult_t NFD_PickFolder(
     }
 
     // Show the dialog to the user
-    result = fileDialog->Show(NULL);
+    result = fileDialog->Show(::GetActiveWindow());
     if ( SUCCEEDED(result) )
     {
         // Get the folder name
